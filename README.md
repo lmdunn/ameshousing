@@ -95,7 +95,7 @@ Additional details, in particular, keys for understanding object data, can be fo
 
 ## Brief Summary of Analysis
 
-The data was cleaned, dealing with null values. To see if the simple presence of a feature played a meaningful role, a number of 'has_<\FEATURE>' columns were made based on data from other columns. Ratings were converted to numerical scales to aid in analysis. A heatmap of correlations helped to identify which numerical values show the highest correlation to the sale price.
+The data was cleaned, dealing with null values. To see if the simple presence of a feature played a meaningful role, a number of 'has_{FEATURE}' columns were made based on data from other columns. Ratings were converted to numerical scales to aid in analysis. A heatmap of correlations helped to identify which numerical values show the highest correlation to the sale price.
 
 At that point, the data scientist used an iterative process, starting with the several selections of the highest correlated numerical values, then adding interaction terms (features engineered by multiplying other terms or squaring existing terms). After that, categorical features we're added to the model in multiple combinations. Finally, ridge and LASSO models were applied to the features that had proven to produce the best model.
 
@@ -105,28 +105,30 @@ The Ames Realty Company can increase revenue through concrete recommendations to
 ### Recommendations to Homeowners Preparing to Sell
 The following factors were found to affect the price of the home, based on Model 1. All else held equal, one unit increase of each of the following will provide approximately these dollar increases in the sale price of a home. 
 
-Please note that some items appear out of the homeowner's hand (for example, the year a home was built can't be changed), though even these suggest that a homeowner who's interested in selling will likely benefit from selling sooner, while the house is newer. The benefit of other items may not be worth the: for example, the cost of adding an additional full-bathroom to a house will far exceed the marginal benefit to the sale price, all else held equal, of approximately $\1179.58.
+Please note that some items appear out of the homeowner's hand (for example, the year a home was built can't be changed), though even these suggest that a homeowner who's interested in selling will likely benefit from selling sooner, while the house is newer. The benefit of other items may not be worth the: for example, the cost of adding an additional full-bathroom to a house will far exceed the marginal benefit to the sale price, all else held equal, of approximately $1179.58.
 
 |Feature|Increase in $ (2010) per 1 unit of improvement in feature (all else held equal)|Notes|
 |---|---|---|
-|Exterior Quality|$\16175.98|Rating of the quality of the materials used on the exterior, 5 point scale|
-|Overall Quality|$\13621.00|Rating of the overall material and finishes, 10 point scale|
-|Kitchen Quality|$\12846.68|Rating of the quality of the kitchen, 5 point scale|
-|Has Fireplace|$\8175.98|If the house has a fireplace or not|
-|Fireplaces|$\4412.43|The number of fireplaces|
-|Total Rooms Above Ground|$\2790.76|The total number of rooms above ground|
-|Heating Quality|$\2359.09|Rating of the quality of the heating, 5 point scale|
-|Full Bath|$\1179.58|The number of full bathrooms|
-|Year Built|$\203.81|The year the home was built|
-|Year of last Remodel or Addition|$\167.28|
-|Masonry Veneer Area|$\37.21|Square footage of masonry veneer|
-|Above Ground Living Area|$\31.80|Square footage of living area above ground|
-|Area of Main Finished Basement Type|$\16.26|Square footage of the primary type of finished basement space|
-|First Floor Area|$\14.21|Square footage of the first floor|
-|Total Basement Area|$\9.14|Square footage of the basement|
+|Exterior Quality|$16175.98|Rating of the quality of the materials used on the exterior, 5 point scale|
+|Overall Quality|$13621.00|Rating of the overall material and finishes, 10 point scale|
+|Kitchen Quality|$12846.68|Rating of the quality of the kitchen, 5 point scale|
+|Has Fireplace|$8175.98|If the house has a fireplace or not|
+|Fireplaces|$4412.43|The number of fireplaces|
+|Total Rooms Above Ground|$2790.76|The total number of rooms above ground|
+|Heating Quality|$2359.09|Rating of the quality of the heating, 5 point scale|
+|Full Bath|$1179.58|The number of full bathrooms|
+|Year Built|$203.81|The year the home was built|
+|Year of last Remodel or Addition|$167.28|
+|Masonry Veneer Area|$37.21|Square footage of masonry veneer|
+|Above Ground Living Area|$31.80|Square footage of living area above ground|
+|Area of Main Finished Basement Type|$16.26|Square footage of the primary type of finished basement space|
+|First Floor Area|$14.21|Square footage of the first floor|
+|Total Basement Area|$9.14|Square footage of the basement|
 
 ### Recommendations for Sales Agents
-The Ames Realty Company should build a calculator for its sales agents to estimate the sale price of homes using the above factors. This calculator should be powered by Model 4 (Ridge), which produced strong predictions by several metrics, including the best Root Mean Squared Error (RMSE) of all the models. This model's RMSE of $\\22,165.22 beat the baseline RMSE of $\\75922.17 by $53,756.95, a significant improvement. In other words, roughly speaking, Model 4 (Ridge) was on average about $54,000 more accurate than the baseline, which was calculated from the mean of the home prices.
+The Ames Realty Company should build a calculator for its sales agents to estimate the sale price of homes using the above factors. This calculator should be powered by Model 4 (Ridge), which produced strong predictions by several metrics, including the best Root Mean Squared Error (RMSE) of all the models. This model's RMSE of $\22,165.22 beat the baseline RMSE of $\75922.17 by $53,756.95, a significant improvement. In other words, roughly speaking, Model 4 (Ridge) was on average about $54,000 more accurate than the baseline, which was calculated from the mean of the home prices.
+
+It's worth noting that the model appears to be more accurate under the $300,000 mark, perhaps because it has more data for houses under that price range.
 
 ### Collect Additional Data
 The data set we worked from was pre-2010. Undoubtedly, the market has changed and we should collect updated data.
