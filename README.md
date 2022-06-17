@@ -129,9 +129,9 @@ Please note that some items appear out of the homeowner's hand (for example, the
 |Garage Year Built|8.47|Year garage was built|
 
 ### Recommendations for Sales Agents
-The Ames Realty Company should build a calculator for its sales agents to estimate the sale price of homes using the above factors. This calculator should be powered by Model 4 (Ridge), which produced strong predictions by several metrics, including the best Root Mean Squared Error (RMSE) of all the models. This model's RMSE of 21354.80 dollars beat the baseline RMSE of $\75922.17 by $54,567., a significant improvement. In other words, roughly speaking, Model 4 (Ridge) was on average about $54,000 more accurate than the baseline, which was calculated from the mean of the home prices.
+The Ames Realty Company should build a calculator for its sales agents to estimate the sale price of homes using the above factors. This calculator should be powered by Model 4 (Ridge), which produced strong predictions by several metrics, including the best Root Mean Squared Error (RMSE) of all the models. This model's RMSE of 21354.80 dollars beat the baseline RMSE of 75922.17 dollars by 54,567.37 dollars, a significant improvement. In other words, roughly speaking, Model 4 (Ridge) was on average about $54,000 more accurate than the baseline, which was calculated from the mean of the home prices.
 
-It's worth noting that the model appears to be more accurate under the $300,000 mark, perhaps because it has more data for houses under that price range.
+It's worth noting that the model appears to be more accurate under the 300,000 dollar mark and above about the $75,000 mark, perhaps because it has more data for houses under that price range.
 
 ### Collect Additional Data
 The data set we worked from was pre-2010. Undoubtedly, the market has changed and we should collect updated data.
